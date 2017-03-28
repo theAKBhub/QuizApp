@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Quiz App</string>
+    <string name="hint_name">Enter your name</string>
+    <string name="hint_email">Enter your email</string>
+
+    <string name="label_continue">Continue</string>
+    <string name="label_start_quiz">Start Quiz</string>
+
+    <!-- Spinner values -->
+    <string name="level_prompt">Choose complexity level =&gt;</string>
+    <string-array name="level_arrays">
+        <item>Easy</item>
+        <item>Medium</item>
+        <item>Difficult</item>
+    </string-array>
+
+    <!-- Information and Error messages -->
+    <string name="error_name_empty">Please enter your name</string>
+    <string name="error_name_invalid">This name is invalid</string>
+    <string name="error_email_empty">Please enter your email</string>
+    <string name="error_email_invalid">This email is invalid</string>
+    <string name="info_hello">Hello, %s</string>
+    <string name="info_level_chosen">You have chosen \"%s\" level for the quiz</string>
+    <string name="info_rules">
+        Rules of the quiz are as follows:\n
+        (1) There are 5 questions in the quiz.\n
+        (2) You will need to answer at least 3 correct questions in order to pass.\n
+        (3) You can use PREV and NEXT buttons to navigate through the questions.\n
+        (4) A "SUBMIT" button will appear on the last question, which upon clicking, will return your score.\n
+        \nGOOD LUCK!
+    </string>
+
+</resources>

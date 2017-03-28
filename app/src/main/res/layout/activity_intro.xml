@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.quizapp.IntroActivity">
+
+    <LinearLayout
+        style="@style/GEN_MatchCont_CentreH"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView_hello"
+            style="@style/textViewHello"/>
+
+        <TextView
+            android:id="@+id/textView_level_chosen"
+            style="@style/GEN_TextView"
+            android:textSize="@dimen/font_large"/>
+
+        <TextView
+            android:id="@+id/textView_rules"
+            style="@style/GEN_TextView"
+            android:padding="@dimen/dimen_20dp"
+            android:text="@string/info_rules" />
+
+        <Button
+            android:id="@+id/button_start_quiz"
+            android:text="@string/label_start_quiz"
+            style="@style/btnGreen"/>
+    </LinearLayout>
+</ScrollView>

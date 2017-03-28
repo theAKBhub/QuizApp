@@ -1,0 +1,98 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Common Styles -->
+    <style name="GEN_WrapCont_CentreH">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <style name="GEN_MatchCont_CentreH">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_margin">@dimen/activity_margin</item>
+    </style>
+
+    <style name="GEN_MatchWidth_WrapHeight">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="GEN_TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+        <item name="android:textColor">@color/colorGreyDark</item>
+        <item name="android:padding">@dimen/dimen_15dp</item>
+        <item name="android:lineSpacingExtra">10dp</item>
+    </style>
+
+    <style name="GEN_Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">@dimen/dimen_10dp</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_10dp</item>
+        <item name="android:paddingTop">@dimen/dimen_10dp</item>
+        <item name="android:paddingBottom">@dimen/dimen_10dp</item>
+        <item name="android:paddingLeft">@dimen/dimen_20dp</item>
+        <item name="android:paddingRight">@dimen/dimen_20dp</item>
+        <item name="android:textColor">@color/colorGreyDark</item>
+        <item name="android:textSize">@dimen/font_small</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+
+    <!-- -->
+    <!-- Specific element Styles -->
+    <!-- -->
+
+    <!-- Logo -->
+    <style name="logo" parent="GEN_WrapCont_CentreH">
+        <item name="android:src">@drawable/quiz</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_30dp</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:paddingLeft">@dimen/dimen_50dp</item>
+        <item name="android:paddingRight">@dimen/dimen_50dp</item>
+    </style>
+
+    <style name="viewEditText">
+        <item name="android:layout_width">320dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+        <item name="android:textColor">@color/colorGreyDark</item>
+        <item name="android:padding">@dimen/dimen_15dp</item>
+        <item name="android:maxWidth">320dp</item>
+        <item name="android:layout_marginLeft">@dimen/activity_margin</item>
+        <item name="android:layout_marginRight">@dimen/activity_margin</item>
+    </style>
+
+    <style name="viewSpinner" parent="GEN_WrapCont_CentreH">
+        <item name="android:textSize">@dimen/font_medium</item>
+        <item name="android:textColor">@color/colorGreyDark</item>
+        <item name="android:padding">@dimen/dimen_15dp</item>
+    </style>
+
+    <style name="btnGreen" parent="GEN_Button">
+        <item name="android:background">@color/colorAccent</item>
+    </style>
+
+    <style name="textViewHello" parent="GEN_TextView">
+        <item name="android:textSize">@dimen/font_xlarge</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:layout_marginTop">@dimen/dimen_20dp</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_10dp</item>
+    </style>
+
+
+
+</resources>

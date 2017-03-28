@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/colorGreyLight"
+    tools:context="com.example.android.quizapp.MainActivity">
+
+    <LinearLayout
+        style="@style/GEN_MatchCont_CentreH"
+        android:orientation="vertical">
+
+        <ImageView
+            style="@style/logo"
+            android:contentDescription="@string/app_name"/>
+
+        <LinearLayout
+            style="@style/GEN_WrapCont_CentreH"
+            android:orientation="vertical">
+
+            <EditText
+                    android:id="@+id/editText_name"
+                    style="@style/viewEditText"
+                    android:inputType="textCapWords"
+                    android:hint="@string/hint_name" />
+
+            <EditText
+                android:id="@+id/editText_email"
+                style="@style/viewEditText"
+                android:inputType="textEmailAddress"
+                android:hint="@string/hint_email" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/GEN_WrapCont_CentreH"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/GEN_TextView"
+                android:text="@string/level_prompt" />
+
+            <Spinner
+                android:id="@+id/spinner_level"
+                style="@style/viewSpinner"
+                android:entries="@array/level_arrays"
+                android:prompt="@string/level_prompt" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_continue"
+            android:text="@string/label_continue"
+            style="@style/btnGreen"/>
+
+    </LinearLayout>
+
+</ScrollView>
