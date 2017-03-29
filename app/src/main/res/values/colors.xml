@@ -7,4 +7,6 @@
     <color name="colorGreyDark">#212121</color>
     <color name="colorGrey">#757575</color>
     <color name="colorGreyLight">#F2F2F2</color>
+    <color name="colorGreyBtnDisabled">#AAAAAA</color>
+    <color name="colorRed">#FF0000</color>
 </resources>

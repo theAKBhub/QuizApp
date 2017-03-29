@@ -5,6 +5,11 @@
 
     <string name="label_continue">Continue</string>
     <string name="label_start_quiz">Start Quiz</string>
+    <string name="label_next">Next</string>
+    <string name="label_prev">Prev</string>
+    <string name="label_submit">Submit</string>
+    <string name="label_restart">Start New Quiz</string>
+    <string name="label_email_score">Email score to me</string>
 
     <!-- Spinner values -->
     <string name="level_prompt">Choose complexity level =&gt;</string>
@@ -29,5 +34,13 @@
         (4) A "SUBMIT" button will appear on the last question, which upon clicking, will return your score.\n
         \nGOOD LUCK!
     </string>
+    <string name="info_qnum">Question %d of 5</string>
+    <string name="info_scores">Your score is %d / 5</string>
+    <string name="info_pass">Congratulations. You have passed!</string>
+    <string name="info_fail">You haven\'t passed. Better luck next time.</string>
+    <string name="info_wrong_ans">Questions(s) you didn\'t answer correctly:\n\n</string>
+    <string name="info_qs">QS =&gt; %s</string>
+    <string name="info_your_ans">Your answer =&gt; %s</string>
+    <string name="info_ans">Correct answer =&gt; %s</string>
 
 </resources>

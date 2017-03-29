@@ -1,10 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/colorGreyLight"
     tools:context="com.example.android.quizapp.QuizActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        style="@style/GEN_MatchCont_CentreH"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView_qnum"
+            android:text="@string/info_qnum"
+            style="@style/textViewQNum"/>
+
+        <TextView
+            android:id="@+id/textView_question"
+            style="@style/GEN_TextView"
+            android:textSize="@dimen/font_large"/>
+
+        <TextView
+            android:id="@+id/textView_result"
+            style="@style/GEN_TextView"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/llayout_options"
+            style="@style/GEN_MatchWidth_WrapHeight"
+            android:padding="@dimen/dimen_15dp"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:id="@+id/radio_group"
+                style="@style/radioGroup" >
+
+                <RadioButton
+                    android:id="@+id/radioButton_option_1"
+                    style="@style/radioButton" />
+
+                <RadioButton
+                    android:id="@+id/radioButton_option_2"
+                    style="@style/radioButton" />
+
+                <RadioButton
+                    android:id="@+id/radioButton_option_3"
+                    style="@style/radioButton" />
+
+                <RadioButton
+                    android:id="@+id/radioButton_option_4"
+                    style="@style/radioButton" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <RelativeLayout
+            style="@style/GEN_MatchWidth_WrapHeight"
+            android:padding="@dimen/dimen_15dp">
+
+            <Button
+                android:id="@+id/button_prev"
+                android:text="@string/label_prev"
+                style="@style/btnDarkGrey"
+                android:layout_alignParentLeft="true"/>
+
+            <Button
+                android:id="@+id/button_next"
+                android:text="@string/label_next"
+                style="@style/btnGreen"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/button_submit"
+            android:text="@string/label_submit"
+            style="@style/btnProcess" />
+        <Button
+            android:id="@+id/button_email_score"
+            android:text="@string/label_email_score"
+            style="@style/btnEmailScores" />
+        <Button
+            android:id="@+id/button_restart"
+            android:text="@string/label_restart"
+            style="@style/btnProcess" />
+
+    </LinearLayout>
+
+</ScrollView>

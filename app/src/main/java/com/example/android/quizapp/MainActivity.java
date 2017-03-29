@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setCustomTypeface();
 
         button_continue.setOnClickListener(this);
-
     }
 
     @Override
