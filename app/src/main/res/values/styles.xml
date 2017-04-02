@@ -40,7 +40,6 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center_horizontal</item>
-        <item name="android:layout_marginTop">@dimen/dimen_10dp</item>
         <item name="android:layout_marginBottom">@dimen/dimen_10dp</item>
         <item name="android:paddingTop">@dimen/dimen_10dp</item>
         <item name="android:paddingBottom">@dimen/dimen_10dp</item>
@@ -97,7 +96,6 @@
         <item name="android:textColor">@color/colorGreyLight</item>
         <item name="android:textSize">@dimen/font_medium</item>
         <item name="android:visibility">gone</item>
-        <item name="android:layout_marginTop">@dimen/dimen_5dp</item>
     </style>
 
     <style name="btnEmailScores" parent="btnProcess">
@@ -124,11 +122,24 @@
         <item name="android:textSize">@dimen/font_large</item>
         <item name="android:paddingLeft">@dimen/dimen_10dp</item>
         <item name="android:buttonTint">@color/colorPrimary</item>
-        <item name="android:visibility">gone</item>
     </style>
 
     <style name="radioGroup" parent="GEN_MatchWidth_WrapHeight">
         <item name="android:orientation">vertical</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="checkBox" parent="GEN_TextView">
+        <item name="android:textSize">@dimen/font_large</item>
+        <item name="android:paddingLeft">@dimen/dimen_10dp</item>
+        <item name="android:buttonTint">@color/colorPrimary</item>
+    </style>
+
+    <style name="checkBoxHolder" parent="GEN_MatchWidth_WrapHeight">
+        <item name="android:paddingLeft">@dimen/dimen_15dp</item>
+        <item name="android:paddingBottom">@dimen/dimen_15dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:visibility">gone</item>
     </style>
 
 </resources>

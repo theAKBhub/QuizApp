@@ -13,32 +13,51 @@ import android.widget.Spinner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Class - MainActivity
+ * This class takes input from first Activity (activity_main.xml) and validates
+ * user name and user email for empty field and valid format. If both are
+ * found valid then invokes second Activity (activity_intro.xml) with an Intent
+ * message formed by concatenating user name, user email and quiz level.
+ */
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    EditText editText_name;
-    EditText editText_email;
-    Button button_continue;
-    Typeface custom_font;
-    Spinner spinner_level;
+    // All UI components
+    private EditText mEditTextName;
+    private EditText mEditTextEmail;
+    private Button mButtonContinue;
+    private Spinner mSpinnerLevel;
 
+    // Various identifiers
+    private Typeface mCustomFont;
 
+    /**
+     * onCreate method of MainActivity
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editText_name = (EditText) findViewById(R.id.editText_name);
-        editText_email = (EditText) findViewById(R.id.editText_email);
-        spinner_level = (Spinner) findViewById(R.id.spinner_level);
-        button_continue = (Button) findViewById(R.id.button_continue);
+        // Initialize UI components
+        mEditTextName = (EditText) findViewById(R.id.editText_name);
+        mEditTextEmail = (EditText) findViewById(R.id.editText_email);
+        mButtonContinue = (Button) findViewById(R.id.button_continue);
+        mSpinnerLevel = (Spinner) findViewById(R.id.spinner_level);
 
         // Set custom typeface
-        custom_font = Typeface.createFromAsset(getAssets(), "fonts/roboto_regular.ttf");
+        mCustomFont = Typeface.createFromAsset(getAssets(), "fonts/roboto_regular.ttf");
         setCustomTypeface();
 
-        button_continue.setOnClickListener(this);
+        mButtonContinue.setOnClickListener(this);
     }
 
+    /**
+     * Invokes methods for individual call to action buttons
+     * @param view
+     */
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -52,9 +71,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * This method sets custom font for all views
      */
     public void setCustomTypeface() {
-        editText_name.setTypeface(custom_font);
-        editText_email.setTypeface(custom_font);
-        button_continue.setTypeface(custom_font);
+        mEditTextName.setTypeface(mCustomFont);
+        mEditTextEmail.setTypeface(mCustomFont);
+        mButtonContinue.setTypeface(mCustomFont);
     }
 
     /**
@@ -62,72 +81,72 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     public void continueQuiz() {
         final Context context = this;
-        String user_name = "";
-        String user_email = "";
-        String intent_msg = "";
+        String userName = "";
+        String userEmail = "";
+        String intentMessage = "";
         boolean isValidName = false;
         boolean isValidEmail = false;
 
-        user_name = editText_name.getText().toString();
-        user_email = editText_email.getText().toString();
+        userName = mEditTextName.getText().toString();
+        userEmail = mEditTextEmail.getText().toString();
 
-        isValidName = validateName(user_name);
+        isValidName = validateName(userName);
+        // Validate email only if name is found valid
         if (isValidName) {
-            isValidEmail = validateEmail(user_email);
-        }
-        if (isValidName && isValidEmail) {
-            intent_msg = user_name + "|";
-            intent_msg += user_email + "|";
-            intent_msg += spinner_level.getSelectedItem();
-            Intent intent = new Intent(context, IntroActivity.class);
-            intent.putExtra("message", intent_msg);
-            startActivity(intent);
+            isValidEmail = validateEmail(userEmail);
+
+            // Form intent message if both name and email found valid
+            if (isValidEmail) {
+                intentMessage = userName + "|";
+                intentMessage += userEmail + "|";
+                intentMessage += mSpinnerLevel.getSelectedItem();
+                Intent intent = new Intent(context, IntroActivity.class);
+                intent.putExtra("message", intentMessage);
+                startActivity(intent);
+            }
         }
     }
 
     /**
-     * This method Validates Name
+     * This method Validates user input Name
      */
     public boolean validateName(String name) {
-        String pattern_name = "[a-zA-z]+([ '-][a-zA-Z]+)*";
+        String patternName = "[a-zA-z]+([ '-][a-zA-Z]+)*";
 
         if (name.length() == 0) {
-            editText_name.setError(getString(R.string.error_name_empty));
+            mEditTextName.setError(getString(R.string.error_name_empty));
             return false;
         }
         else  {
-            Pattern pattern = Pattern.compile(pattern_name);
+            Pattern pattern = Pattern.compile(patternName);
             Matcher matcher = pattern.matcher(name);
             if (!matcher.matches()) {
-                editText_name.setError(getString(R.string.error_name_invalid));
+                mEditTextName.setError(getString(R.string.error_name_invalid));
                 return false;
-            }
-            else {
+            } else {
                 return true;
             }
         }
     }
 
     /**
-     * This method Validates Email
+     * This method Validates user input Email
      */
     public boolean validateEmail(String email) {
         String pattern_email = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+                    + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
         if (email.length() == 0) {
-            editText_email.setError(getString(R.string.error_email_empty));
+            mEditTextEmail.setError(getString(R.string.error_email_empty));
             return false;
-        }
-        else  {
+        } else  {
             Pattern pattern = Pattern.compile(pattern_email);
             Matcher matcher = pattern.matcher(email);
 
             if (!matcher.matches()) {
-                editText_email.setError(getString(R.string.error_email_invalid));
+                mEditTextEmail.setError(getString(R.string.error_email_invalid));
                 return false;
-            }
-            else {
+            } else {
                 return true;
             }
         }

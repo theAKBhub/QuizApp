@@ -85,7 +85,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
      */
     public List<Quiz> getRecords(String level) {
         List<Quiz> quizList = new ArrayList<Quiz>();
-        String selectQuery = "SELECT * FROM " + TABLE_QUIZ + " WHERE " + KEY_LEVEL + " = '" + level + "' ORDER BY RANDOM() LIMIT 5";
+        String selectQuery = "SELECT * FROM " + TABLE_QUIZ + " WHERE " + KEY_LEVEL + " = '" + level + "' ORDER BY RANDOM() LIMIT 7";
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);

@@ -27,20 +27,20 @@
     <string name="info_hello">Hello, %s</string>
     <string name="info_level_chosen">You have chosen \"%s\" level for the quiz</string>
     <string name="info_rules">
-        Rules of the quiz are as follows:\n
-        (1) There are 5 questions in the quiz.\n
-        (2) You will need to answer at least 3 correct questions in order to pass.\n
-        (3) You can use PREV and NEXT buttons to navigate through the questions.\n
-        (4) A "SUBMIT" button will appear on the last question, which upon clicking, will return your score.\n
-        \nGOOD LUCK!
+            Rules of the quiz are as follows:\n
+            (1) There are 7 questions in the quiz.\n
+            (2) You will need to answer at least 5 correct questions in order to pass.\n
+            (3) You can use PREV and NEXT buttons to navigate through the questions.\n
+            (4) A "SUBMIT" button will appear on the last question, which upon clicking, will return your score.\n
+            \nGOOD LUCK!
     </string>
-    <string name="info_qnum">Question %d of 5</string>
-    <string name="info_scores">Your score is %d / 5</string>
+    <string name="info_qnum">Question %d of 7</string>
+    <string name="info_scores">Your score is %d / 7</string>
     <string name="info_pass">Congratulations. You have passed!</string>
     <string name="info_fail">You haven\'t passed. Better luck next time.</string>
-    <string name="info_wrong_ans">Questions(s) you didn\'t answer correctly:\n\n</string>
+    <string name="info_wrong_ans">Questions(s) you didn\'t answer correctly:</string>
     <string name="info_qs">QS =&gt; %s</string>
     <string name="info_your_ans">Your answer =&gt; %s</string>
     <string name="info_ans">Correct answer =&gt; %s</string>
-
+    <string name="info_toast_1">Check out the incorrect answers</string>
 </resources>

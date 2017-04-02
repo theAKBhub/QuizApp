@@ -15,7 +15,11 @@
 
         <TextView
             android:id="@+id/textView_qnum"
-            android:text="@string/info_qnum"
+            style="@style/textViewQNum"/>
+
+        <TextView
+            android:id="@+id/textView_score"
+            android:visibility="gone"
             style="@style/textViewQNum"/>
 
         <TextView
@@ -24,41 +28,90 @@
             android:textSize="@dimen/font_large"/>
 
         <TextView
+            android:id="@+id/textView_msg_result"
+            android:visibility="gone"
+            style="@style/GEN_TextView"
+            android:textSize="@dimen/font_large"/>
+
+        <TextView
             android:id="@+id/textView_result"
             style="@style/GEN_TextView"
+            android:layout_marginBottom="@dimen/dimen_0dp"
             android:visibility="gone"/>
 
         <LinearLayout
-            android:id="@+id/llayout_options"
             style="@style/GEN_MatchWidth_WrapHeight"
             android:padding="@dimen/dimen_15dp"
             android:orientation="vertical">
 
             <RadioGroup
-                android:id="@+id/radio_group"
+                android:id="@+id/radio_group_A"
                 style="@style/radioGroup" >
 
                 <RadioButton
-                    android:id="@+id/radioButton_option_1"
+                    android:id="@+id/radioButton_option_1A"
                     style="@style/radioButton" />
 
                 <RadioButton
-                    android:id="@+id/radioButton_option_2"
+                    android:id="@+id/radioButton_option_2A"
                     style="@style/radioButton" />
 
                 <RadioButton
-                    android:id="@+id/radioButton_option_3"
+                    android:id="@+id/radioButton_option_3A"
                     style="@style/radioButton" />
 
                 <RadioButton
-                    android:id="@+id/radioButton_option_4"
+                    android:id="@+id/radioButton_option_4A"
                     style="@style/radioButton" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radio_group_B"
+                style="@style/radioGroup" >
+
+                <RadioButton
+                    android:id="@+id/radioButton_option_1B"
+                    style="@style/radioButton" />
+
+                <RadioButton
+                    android:id="@+id/radioButton_option_2B"
+                    style="@style/radioButton" />
+
             </RadioGroup>
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/checkbox_holder"
+            style="@style/checkBoxHolder">
+
+            <CheckBox
+                android:id="@+id/checkBox_option_1"
+                style="@style/checkBox" />
+
+            <CheckBox
+                android:id="@+id/checkBox_option_2"
+                style="@style/checkBox" />
+
+            <CheckBox
+                android:id="@+id/checkBox_option_3"
+                style="@style/checkBox" />
+
+            <CheckBox
+                android:id="@+id/checkBox_option_4"
+                style="@style/checkBox" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editText_answer"
+            style="@style/viewEditText"
+            android:padding="@dimen/dimen_15dp"
+            android:visibility="gone"/>
+
         <RelativeLayout
+            android:id="@+id/rlayout_buttons"
             style="@style/GEN_MatchWidth_WrapHeight"
-            android:padding="@dimen/dimen_15dp">
+            android:paddingTop="@dimen/dimen_15dp"
+            android:paddingBottom="@dimen/dimen_5dp">
 
             <Button
                 android:id="@+id/button_prev"
