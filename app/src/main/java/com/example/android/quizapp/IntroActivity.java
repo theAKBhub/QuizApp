@@ -176,6 +176,43 @@ public class IntroActivity extends AppCompatActivity implements View.OnClickList
                 2, "XML|Java",
                 "Objective-C|XML|Python|Java"
         ));
+        db.addRecord(new Quiz(
+                "Easy",
+                "What value should be assigned to \"android:layout_width\" if you want a TextView " +
+                        "to take up width only as much needed for its content?",
+                1, "wrap_content",
+                "wrap_content"
+        ));
+        db.addRecord(new Quiz(
+                "Easy",
+                "What is the preferred unit for dimensions in Android?",
+                1, "dp",
+                "dp"
+        ));
+        db.addRecord(new Quiz(
+                "Easy",
+                "Which symbol is used to reference a resource in the Android App?",
+                1, "@",
+                "@"
+        ));
+        db.addRecord(new Quiz(
+                "Easy",
+                "Pick the values that can be assigned to \"android:scaleType\" attribute of an ImageView?",
+                2, "center|centerCrop",
+                "left|inside|center|centerCrop"
+        ));
+        db.addRecord(new Quiz(
+                "Easy",
+                "Pick the attributes that can be used to control the position of an element on the UI",
+                2, "android:layout_margin|android:padding",
+                "android:margin|android:layout_margin|android:layout_padding|android:padding"
+        ));
+        db.addRecord(new Quiz(
+                "Easy",
+                "Pick the logical operators used in Java",
+                2, "&|^",
+                "*|&|^|%"
+        ));
 
         db.addRecord(new Quiz(
                 "Medium",
@@ -248,6 +285,42 @@ public class IntroActivity extends AppCompatActivity implements View.OnClickList
                 "Pick the Intent types available in Android",
                 2, "Implicit Intent|Explicit Intent",
                 "Implicit Intent|Explicit Intent|Inbound Intent|Outbound Intent"
+        ));
+        db.addRecord(new Quiz(
+                "Medium",
+                "Which string function can be used to split a string?",
+                1, "split",
+                "split"
+        ));
+        db.addRecord(new Quiz(
+                "Medium",
+                "Which keyword in Java is used to pass a value from one method to another?",
+                1, "return",
+                "return"
+        ));
+        db.addRecord(new Quiz(
+                "Medium",
+                "Name the block used in Java where all exceptions are caught",
+                1, "catch",
+                "catch"
+        ));
+        db.addRecord(new Quiz(
+                "Medium",
+                "Which of the following features are applicable to Java?",
+                2, "Object Oriented|Multithreaded",
+                "Object Oriented|Procedural|Multithreaded|Non-portable"
+        ));
+        db.addRecord(new Quiz(
+                "Medium",
+                "Which of the following principles are applicable to Java?",
+                2, "Inheritance|Polymorphism",
+                "Inheritance|Decapsulation|Polymorphism|Conceptual"
+        ));
+        db.addRecord(new Quiz(
+                "Medium",
+                "Which of these methods are called when the screen changes orientation?",
+                2, "onCreate()|onRestoreInstanceState()",
+                "onCreate()|onRestart()|onActivityResult()|onRestoreInstanceState()"
         ));
 
         db.addRecord(new Quiz(
@@ -325,7 +398,44 @@ public class IntroActivity extends AppCompatActivity implements View.OnClickList
                 2, "new operator|constructor method",
                 "new operator|subclass|interface|constructor method"
         ));
-
-
+        db.addRecord(new Quiz(
+                "Difficult",
+                "What will be the output of the following piece of code?\n" +
+                        "String s1 = new String(\"thomas\");\n" +
+                        "String s2 = new String(\"THOMAS\");\n?" +
+                        "System.out.println(s1 = s2);",
+                1, "THOMAS",
+                "THOMAS"
+        ));
+        db.addRecord(new Quiz(
+                "Difficult",
+                "Which keyword in Java refers to the current object?",
+                1, "this",
+                "this"
+        ));
+        db.addRecord(new Quiz(
+                "Difficult",
+                "Which keyword refers to the immediate parent class object?",
+                1, "super",
+                "super"
+        ));
+        db.addRecord(new Quiz(
+                "Difficult",
+                "Pick the keywords that are used in Java exception handling",
+                2, "try|catch",
+                "error|try|exception|catch"
+        ));
+        db.addRecord(new Quiz(
+                "Difficult",
+                "Pick the functions that can be associated with a Java method",
+                2, "Overriding|Overloading",
+                "Overwriting|Overthrowing|Overriding|Overloading"
+        ));
+        db.addRecord(new Quiz(
+                "Difficult",
+                "A class in Java can be",
+                2, "final|abstract",
+                "default|final|native|abstract"
+        ));
     }
 }
