@@ -402,10 +402,10 @@ public class IntroActivity extends AppCompatActivity implements View.OnClickList
                 "Difficult",
                 "What will be the output of the following piece of code?\n" +
                         "String s1 = new String(\"thomas\");\n" +
-                        "String s2 = new String(\"THOMAS\");\n?" +
+                        "String s2 = new String(\"thomson\");\n?" +
                         "System.out.println(s1 = s2);",
-                1, "THOMAS",
-                "THOMAS"
+                1, "thomson",
+                "thomson"
         ));
         db.addRecord(new Quiz(
                 "Difficult",
