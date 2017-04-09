@@ -37,6 +37,7 @@
 
         <LinearLayout
             style="@style/GEN_WrapCont_CentreH"
+            android:layout_marginTop="@dimen/dimen_15dp"
             android:orientation="horizontal">
 
             <TextView

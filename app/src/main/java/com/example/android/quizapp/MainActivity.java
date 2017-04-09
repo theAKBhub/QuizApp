@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -109,6 +110,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * This method Validates user input Name
+     * @param name
+     * @return boolean variable
      */
     public boolean validateName(String name) {
         String patternName = "[a-zA-z]+([ '-][a-zA-Z]+)*";
@@ -131,19 +134,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * This method Validates user input Email
+     * @param email
+     * @return boolean variable
      */
     public boolean validateEmail(String email) {
-        String pattern_email = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-                    + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        boolean isEmailValid = false;
 
         if (email.length() == 0) {
             mEditTextEmail.setError(getString(R.string.error_email_empty));
             return false;
         } else  {
-            Pattern pattern = Pattern.compile(pattern_email);
-            Matcher matcher = pattern.matcher(email);
+            isEmailValid = Patterns.EMAIL_ADDRESS.matcher(email).matches();
 
-            if (!matcher.matches()) {
+            if (!isEmailValid) {
                 mEditTextEmail.setError(getString(R.string.error_email_invalid));
                 return false;
             } else {

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
@@ -39,6 +40,7 @@ import static com.example.android.quizapp.R.id.button_prev;
  *              start a new quiz.
  */
 public class QuizActivity extends AppCompatActivity implements View.OnClickListener {
+    final Context context = this;
 
     // Constant variables
     private static final int MIN_QNUM = 1;
@@ -213,8 +215,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
      */
     @Override
     public void onClick(View view) {
-        final Context context = this;
-
         switch (view.getId()) {
             case button_prev:
                 if (mCurrentQID > MIN_QNUM) {
@@ -406,23 +406,23 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
      */
     public void showButtons() {
         if (mCurrentQID == MIN_QNUM) {
-            mButtonPrev.setBackgroundColor(getColor(R.color.colorGreyBtnDisabled));
+            mButtonPrev.setBackgroundResource(R.color.colorGreyBtnDisabled);
             mButtonPrev.setEnabled(false);
-            mButtonNext.setBackgroundColor(getColor(R.color.colorAccent));
+            mButtonNext.setBackgroundResource(R.color.colorAccent);
             mButtonNext.setEnabled(true);
             mButtonSubmit.setVisibility(View.GONE);
         }
         else if (mCurrentQID == MAX_QNUM) {
-            mButtonNext.setBackgroundColor(getColor(R.color.colorGreyBtnDisabled));
+            mButtonNext.setBackgroundResource(R.color.colorGreyBtnDisabled);
             mButtonNext.setEnabled(false);
-            mButtonPrev.setBackgroundColor(getColor(R.color.colorGreyDark));
+            mButtonPrev.setBackgroundResource(R.color.colorGreyDark);
             mButtonPrev.setEnabled(true);
             mButtonSubmit.setVisibility(View.VISIBLE);
         }
         else if (mCurrentQID > MIN_QNUM && mCurrentQID < MAX_QNUM) {
-            mButtonPrev.setBackgroundColor(getColor(R.color.colorGreyDark));
+            mButtonPrev.setBackgroundResource(R.color.colorGreyDark);
             mButtonPrev.setEnabled(true);
-            mButtonNext.setBackgroundColor(getColor(R.color.colorAccent));
+            mButtonNext.setBackgroundResource(R.color.colorAccent);
             mButtonNext.setEnabled(true);
             mButtonSubmit.setVisibility(View.GONE);
         }
@@ -560,11 +560,11 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         mTextViewScore.setText(getString(R.string.info_scores, mScores));
         if (mScores >= PASS_SCORE) {
             mTextViewResultMsg.setText(getString(R.string.info_pass));
-            mTextViewResultMsg.setTextColor(getColor(R.color.colorPrimaryDark));
+            mTextViewResultMsg.setTextColor(ContextCompat.getColor(context, R.color.colorPrimaryDark));
             toastMessage += "\n" + getString(R.string.info_pass);
         } else {
             mTextViewResultMsg.setText(getString(R.string.info_fail));
-            mTextViewResultMsg.setTextColor(getColor(R.color.colorRed));
+            mTextViewResultMsg.setTextColor(ContextCompat.getColor(context, R.color.colorRed));
             toastMessage += "\n" + getString(R.string.info_fail);
         }
         if (mScores < MAX_QNUM) {
