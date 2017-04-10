@@ -43,5 +43,5 @@
     <string name="info_qs">QS >>&#160;&#160; %s</string>
     <string name="info_your_ans">Your answer >>&#160;&#160; %s</string>
     <string name="info_ans">Correct answer >>&#160;&#160; %s</string>
-    <string name="info_toast_1">Check out the incorrect answers</string>
+    <string name="info_toast">Check out the incorrect answers</string>
 </resources>

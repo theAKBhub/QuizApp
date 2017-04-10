@@ -101,16 +101,12 @@
                 style="@style/checkBox" />
         </LinearLayout>
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <EditText
-                android:id="@+id/editText_answer"
-                android:hint="@string/hint_answer"
-                style="@style/viewEditText"
-                android:padding="@dimen/dimen_15dp"
-                android:visibility="gone"/>
-        </android.support.design.widget.TextInputLayout>
+        <EditText
+            android:id="@+id/editText_answer"
+            android:hint="@string/hint_answer"
+            style="@style/viewEditText"
+            android:padding="@dimen/dimen_15dp"
+            android:visibility="gone"/>
 
         <RelativeLayout
             android:id="@+id/rlayout_buttons"

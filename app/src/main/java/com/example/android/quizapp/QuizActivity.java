@@ -572,9 +572,9 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             mTextViewResult.setText(msgResult);
         }
         if (mScores < MAX_QNUM) {
-            toastMessage += getString(R.string.info_toast_1);
+            toastMessage += "\n" + getString(R.string.info_toast);
         }
-        Toast toast = Toast.makeText(QuizActivity.this, toastMessage, Toast.LENGTH_LONG);
+        Toast toast = Toast.makeText(QuizActivity.this, toastMessage, Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
         toast.show();
     }
