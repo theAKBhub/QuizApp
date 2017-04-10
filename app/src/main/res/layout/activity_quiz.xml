@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="@color/colorGreyLight"
+    android:background="@color/colorBackground"
     tools:context="com.example.android.quizapp.QuizActivity">
 
     <LinearLayout
@@ -101,11 +101,16 @@
                 style="@style/checkBox" />
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/editText_answer"
-            style="@style/viewEditText"
-            android:padding="@dimen/dimen_15dp"
-            android:visibility="gone"/>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/editText_answer"
+                android:hint="@string/hint_answer"
+                style="@style/viewEditText"
+                android:padding="@dimen/dimen_15dp"
+                android:visibility="gone"/>
+        </android.support.design.widget.TextInputLayout>
 
         <RelativeLayout
             android:id="@+id/rlayout_buttons"

@@ -58,17 +58,15 @@
     <!-- Logo -->
     <style name="logo" parent="GEN_WrapCont_CentreH">
         <item name="android:src">@drawable/quiz</item>
-        <item name="android:layout_marginBottom">@dimen/dimen_30dp</item>
-        <item name="android:scaleType">centerInside</item>
-        <item name="android:paddingLeft">@dimen/dimen_50dp</item>
-        <item name="android:paddingRight">@dimen/dimen_50dp</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_50dp</item>
+        <item name="android:scaleType">centerCrop</item>
     </style>
 
     <style name="viewEditText">
         <item name="android:layout_width">320dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/font_medium</item>
-        <item name="android:textColor">@color/colorGreyDark</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
         <item name="android:padding">@dimen/dimen_15dp</item>
         <item name="android:maxWidth">@dimen/dimen_320dp</item>
         <item name="android:layout_marginLeft">@dimen/activity_margin</item>
@@ -83,11 +81,13 @@
 
     <style name="btnGreen" parent="GEN_Button">
         <item name="android:background">@color/colorAccent</item>
+        <item name="android:layout_marginTop">@dimen/dimen_30dp</item>
     </style>
 
     <style name="btnDarkGrey" parent="GEN_Button">
         <item name="android:background">@color/colorGreyDark</item>
         <item name="android:textColor">@color/colorGreyLight</item>
+        <item name="android:layout_marginTop">@dimen/dimen_30dp</item>
     </style>
 
     <style name="btnProcess" parent="GEN_Button">

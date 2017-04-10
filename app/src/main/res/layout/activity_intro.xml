@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="@color/colorGreyLight"
+    android:background="@color/colorBackground"
     tools:context="com.example.android.quizapp.IntroActivity">
 
     <LinearLayout
@@ -26,6 +26,7 @@
             android:id="@+id/textView_rules"
             style="@style/GEN_TextView"
             android:padding="@dimen/dimen_20dp"
+            android:lineSpacingExtra="@dimen/dimen_3dp"
             android:text="@string/info_rules" />
 
         <Button

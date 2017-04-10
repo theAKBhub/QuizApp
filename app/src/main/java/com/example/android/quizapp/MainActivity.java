@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Patterns;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // Various identifiers
     private Typeface mCustomFont;
+    private String mUserName;
+    private String mUserEmail;
 
     /**
      * onCreate method of MainActivity
@@ -55,10 +59,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mButtonContinue.setOnClickListener(this);
 
-        TextView tv = (TextView) findViewById(R.id.tv);
-        String text = getString(R.string.hello_worldBlue) + " " + getString(R.string.hello_worldRed);
-        tv.setText(text);
-
+        mEditTextName.addTextChangedListener(new QuizTextWatcher(mEditTextName));
+        mEditTextEmail.addTextChangedListener(new QuizTextWatcher(mEditTextEmail));
 
     }
 
@@ -76,6 +78,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     /**
+     * Extends TextWatcher class for user name and user email views
+     */
+    private class QuizTextWatcher implements TextWatcher {
+        private View view;
+
+        private QuizTextWatcher(View view) {
+            this.view = view;
+        }
+
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        }
+
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        }
+
+        public void afterTextChanged(Editable editable) {
+            switch (view.getId()) {
+                case R.id.editText_name:
+                    validateName();
+                    break;
+            }
+        }
+    }
+
+    /**
      * This method sets custom font for all views
      */
     public void setCustomTypeface() {
@@ -89,24 +116,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     public void continueQuiz() {
         final Context context = this;
-        String userName = "";
-        String userEmail = "";
         String intentMessage = "";
         boolean isValidName = false;
         boolean isValidEmail = false;
 
-        userName = mEditTextName.getText().toString();
-        userEmail = mEditTextEmail.getText().toString();
-
-        isValidName = validateName(userName);
+        isValidName = validateName();
         // Validate email only if name is found valid
         if (isValidName) {
-            isValidEmail = validateEmail(userEmail);
+            isValidEmail = validateEmail();
 
             // Form intent message if both name and email found valid
             if (isValidEmail) {
-                intentMessage = userName + "|";
-                intentMessage += userEmail + "|";
+                intentMessage = mUserName + "|";
+                intentMessage += mUserEmail + "|";
                 intentMessage += mSpinnerLevel.getSelectedItem();
                 Intent intent = new Intent(context, IntroActivity.class);
                 intent.putExtra("message", intentMessage);
@@ -117,20 +139,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * This method Validates user input Name
-     * @param name
      * @return boolean variable
      */
-    public boolean validateName(String name) {
+    public boolean validateName() {
         String patternName = "[a-zA-z]+([ '-][a-zA-Z]+)*";
+        mUserName = mEditTextName.getText().toString().trim();
 
-        if (name.length() == 0) {
+        if (mUserName.length() == 0) {
+            requestFocus(mEditTextName);
             mEditTextName.setError(getString(R.string.error_name_empty));
             return false;
         }
         else  {
             Pattern pattern = Pattern.compile(patternName);
-            Matcher matcher = pattern.matcher(name);
+            Matcher matcher = pattern.matcher(mUserName);
             if (!matcher.matches()) {
+                requestFocus(mEditTextName);
                 mEditTextName.setError(getString(R.string.error_name_invalid));
                 return false;
             } else {
@@ -141,19 +165,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * This method Validates user input Email
-     * @param email
      * @return boolean variable
      */
-    public boolean validateEmail(String email) {
+    public boolean validateEmail() {
         boolean isEmailValid = false;
 
-        if (email.length() == 0) {
+        mUserEmail = mEditTextEmail.getText().toString().trim();
+        if (mUserEmail.length() == 0) {
+            requestFocus(mEditTextEmail);
             mEditTextEmail.setError(getString(R.string.error_email_empty));
             return false;
         } else  {
-            isEmailValid = Patterns.EMAIL_ADDRESS.matcher(email).matches();
+            isEmailValid = Patterns.EMAIL_ADDRESS.matcher(mUserEmail).matches();
 
             if (!isEmailValid) {
+                requestFocus(mEditTextEmail);
                 mEditTextEmail.setError(getString(R.string.error_email_invalid));
                 return false;
             } else {
@@ -161,4 +187,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
     }
+
+    /**
+     * This method brings the View with error in focus
+     * @param view
+     */
+    private void requestFocus(View view) {
+        if (view.requestFocus()) {
+            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+        }
+    }
+
 }

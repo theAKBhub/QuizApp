@@ -2,6 +2,7 @@
     <string name="app_name">Quiz App</string>
     <string name="hint_name">Enter your name</string>
     <string name="hint_email">Enter your email</string>
+    <string name="hint_answer">Type your answer here</string>
 
     <string name="label_continue">Continue</string>
     <string name="label_start_quiz">Start Quiz</string>
@@ -43,6 +44,4 @@
     <string name="info_your_ans">Your answer >>&#160;&#160; %s</string>
     <string name="info_ans">Correct answer >>&#160;&#160; %s</string>
     <string name="info_toast_1">Check out the incorrect answers</string>
-    <string name="hello_worldRed"><![CDATA[<b><font color=#FF0000>Hello world!</b>]]></string>
-    <string name="hello_worldBlue"><b>Hello world!</b></string>
 </resources>

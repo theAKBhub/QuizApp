@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="@color/colorGreyLight"
+    android:background="@color/colorBackground"
     tools:context="com.example.android.quizapp.MainActivity">
 
     <LinearLayout
@@ -19,25 +19,34 @@
 
         <LinearLayout
             style="@style/GEN_WrapCont_CentreH"
+            android:layout_marginTop="@dimen/dimen_30dp"
             android:orientation="vertical">
 
-            <EditText
-                    android:id="@+id/editText_name"
-                    style="@style/viewEditText"
-                    android:inputType="textCapWords"
-                    android:hint="@string/hint_name" />
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                        android:id="@+id/editText_name"
+                        style="@style/viewEditText"
+                        android:inputType="textCapWords"
+                        android:hint="@string/hint_name" />
+            </android.support.design.widget.TextInputLayout>
 
-            <EditText
-                android:id="@+id/editText_email"
-                style="@style/viewEditText"
-                android:inputType="textEmailAddress"
-                android:hint="@string/hint_email" />
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/editText_email"
+                    style="@style/viewEditText"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/hint_email" />
+            </android.support.design.widget.TextInputLayout>
 
         </LinearLayout>
 
         <LinearLayout
             style="@style/GEN_WrapCont_CentreH"
-            android:layout_marginTop="@dimen/dimen_15dp"
+            android:layout_marginTop="@dimen/dimen_25dp"
             android:orientation="horizontal">
 
             <TextView
