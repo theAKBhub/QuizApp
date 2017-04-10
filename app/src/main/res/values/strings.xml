@@ -12,7 +12,7 @@
     <string name="label_email_score">Email score to me</string>
 
     <!-- Spinner values -->
-    <string name="level_prompt">Choose complexity level =&gt;</string>
+    <string name="level_prompt">Choose complexity level >></string>
     <string-array name="level_arrays">
         <item>Easy</item>
         <item>Medium</item>
@@ -39,8 +39,10 @@
     <string name="info_pass">Congratulations. You have passed!</string>
     <string name="info_fail">You haven\'t passed. Better luck next time.</string>
     <string name="info_wrong_ans">Questions(s) you didn\'t answer correctly:</string>
-    <string name="info_qs">QS =&gt; %s</string>
-    <string name="info_your_ans">Your answer =&gt; %s</string>
-    <string name="info_ans">Correct answer =&gt; %s</string>
+    <string name="info_qs">QS >>&#160;&#160; %s</string>
+    <string name="info_your_ans">Your answer >>&#160;&#160; %s</string>
+    <string name="info_ans">Correct answer >>&#160;&#160; %s</string>
     <string name="info_toast_1">Check out the incorrect answers</string>
+    <string name="hello_worldRed"><![CDATA[<b><font color=#FF0000>Hello world!</b>]]></string>
+    <string name="hello_worldBlue"><b>Hello world!</b></string>
 </resources>

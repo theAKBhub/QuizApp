@@ -518,7 +518,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                     mScores++;
                 } else {
                     mWrongAnswers += "\n\n" + getString(R.string.info_qs, mArrayQuestion[i]) + "\n";
-                    mWrongAnswers += getString(R.string.info_your_ans, mArrayAnswerGiven[i]) + "\n";
+                    mWrongAnswers += getString(R.string.info_your_ans, mArrayAnswerGiven[i].replace("|", ", ")) + "\n";
                     mWrongAnswers += getString(R.string.info_ans, mArrayAnswer[i].replace("|", ", "));
                 }
             }

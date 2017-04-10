@@ -64,6 +64,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     /**
      * This methods adds record to the Table Quiz
+     * @param quiz object
      */
     void addRecord(Quiz quiz) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -82,6 +83,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     /**
      * This method retrieves a subset of records
+     * @param level
+     * @return list of quiz records
      */
     public List<Quiz> getRecords(String level) {
         List<Quiz> quizList = new ArrayList<Quiz>();
@@ -117,5 +120,21 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    /**
+     * This method gets the number of rows in the table
+     * @return number of rows
+     */
+    public int getRowsCount() {
+        int numRows = 0;
+
+        String countQuery = "SELECT  * FROM " + TABLE_QUIZ;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        numRows = cursor.getCount();
+        cursor.close();
+
+        // return count
+        return numRows;
+    }
 
 }

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -53,6 +54,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setCustomTypeface();
 
         mButtonContinue.setOnClickListener(this);
+
+        TextView tv = (TextView) findViewById(R.id.tv);
+        String text = getString(R.string.hello_worldBlue) + " " + getString(R.string.hello_worldRed);
+        tv.setText(text);
+
+
     }
 
     /**
