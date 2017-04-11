@@ -44,4 +44,333 @@
     <string name="info_your_ans">Your answer >>&#160;&#160; %s</string>
     <string name="info_ans">Correct answer >>&#160;&#160; %s</string>
     <string name="info_toast">Check out the incorrect answers</string>
+
+    <string-array name="records_array">
+        <item>
+            "Easy",
+            "Which view will you use to enable scrolling on screen?",
+            1, "ScrollView",
+            "RelativeLayout|ScrollView|LinearLayout|GridView"
+        </item>
+        <item>
+            "Easy",
+            "Which view will you use to display an Image?",
+            1, "ImageView",
+            "ImageView|EditText|TextView|Button"
+        </item>
+        <item>
+            "Easy",
+            "Which attribute is used to set font size in TextView?",
+            1, "android:textSize",
+            "android:textStyle|android:textSize|android:textColor|android:textAllCaps"
+        </item>
+        <item>
+            "Easy",
+            "Which one of the following is a valid Java identifier?",
+            1, "BIGclass",
+            "#number|BIGclass|4corners|!first_name"
+        </item>
+        <item>
+            "Easy",
+            "Which one of the following is a valid Java data type?",
+            1, "boolean",
+            "boolean|static|null|Integer"
+        </item>
+        <item>
+            "Easy",
+            "XML Layout files are stored in directory",
+            1, "/res/layout",
+            "/assets|/src|/res/values|/res/layout"
+        </item>
+        <item>
+            "Easy",
+            "All color values in an android app are stored in colors.xml",
+            1, "True",
+            "True|False"
+        </item>
+        <item>
+            "Easy",
+            "Which of the following attributes is used to identify the Activity elements",
+            1, "android:id",
+            "android:id|android:src|android:text|android:gravity"
+        </item>
+        <item>
+            "Easy",
+            "Which file in an Android app is used to store dimension values?",
+            1, "dimens.xml",
+            "dimens.xml"
+        </item>
+        <item>
+            "Easy",
+            "The following component is used to display information for a short period of time",
+            1, "Toast",
+            "Toast"
+        </item>
+        <item>
+            "Easy",
+            "LinearLayout can have the following orientations",
+            2, "Horizontal|Vertical",
+            "Horizontal|Diagonal|Vertical|Radial"
+        </item>
+        <item>
+            "Easy",
+            "Which of the languages below are used in building an Android app?",
+            2, "XML|Java",
+            "Objective-C|XML|Python|Java"
+        </item>
+        <item>
+            "Easy",
+            "What value should be assigned to \"android:layout_width\" if you want a TextView to take up width only as much needed for its content?",
+            1, "wrap_content",
+            "wrap_content"
+        </item>
+        <item>
+            "Easy",
+            "What is the preferred unit for dimensions in Android?",
+            1, "dp",
+            "dp"
+        </item>
+        <item>
+            "Easy",
+            "Which symbol is used to reference a resource in the Android App?",
+            1, "@",
+            "@"
+        </item>
+        <item>
+            "Easy",
+            "Pick the values that can be assigned to \"android:scaleType\" attribute of an ImageView?",
+            2, "center|centerCrop",
+            "left|inside|center|centerCrop"
+        </item>
+        <item>
+            "Easy",
+            "Pick the attributes that can be used to control the position of an element on the UI",
+            2, "android:layout_margin|android:padding",
+            "android:margin|android:layout_margin|android:layout_padding|android:padding"
+        </item>
+        <item>
+            "Easy",
+            "Pick the logical operators used in Java",
+            2, "&amp;|^",
+            "*|&amp;|^|%"
+        </item>
+
+        <item>
+            "Medium",
+            "All activities in an app must be declared in AndroidManifest.xml",
+            1, "True",
+            "True|False"
+        </item>
+        <item>
+            "Medium",
+            "Which are the valid layouts available in Android",
+            1, "All of the above",
+            "LinearLayout|RelativeLayout|ConstraintLayout|All of the above"
+        </item>
+        <item>
+            "Medium",
+            "Attribute android:layout_weight is associated with this layout",
+            1, "LinearLayout",
+            "LinearLayout|RelativeLayout|ConstraintLayout|All of the above"
+        </item>
+        <item>
+            "Medium",
+            "Which layout arranges its children in a single column or a single row",
+            1, "LinearLayout",
+            "LinearLayout|RelativeLayout|ConstraintLayout|GridLayout"
+        </item>
+        <item>
+            "Medium",
+            "Which relational operator will you use to check if 2 variables have same values?",
+            1, "==",
+            "&gt;=|&lt;=|=|=="
+        </item>
+        <item>
+            "Medium",
+            "Which of the following is not a Java keyword",
+            1, "Integer",
+            "static|try|Integer|new"
+        </item>
+        <item>
+            "Medium",
+            "A method declared as void must have a return statement",
+            1, "False",
+            "True|False"
+        </item>
+        <item>
+            "Medium",
+            "The first method of any Activity in an Android app is",
+            1, "onCreate()",
+            "onCreate()|onStart()|onResume()|onRestart()"
+        </item>
+        <item>
+            "Medium",
+            "This component is used to launch an activity from another activity",
+            1, "Intent",
+            "Intent"
+        </item>
+        <item>
+            "Medium",
+            "A method cannot be overridden when declared",
+            1, "final",
+            "final"
+        </item>
+        <item>
+            "Medium",
+            "Which of the following attributes are used in defining style of a TextView element?",
+            2, "android:textSize|android:textColor",
+            "android:textSize|android:textColor|android:orientation|android:buttonTint"
+        </item>
+        <item>
+            "Medium",
+            "Pick the Intent types available in Android",
+            2, "Implicit Intent|Explicit Intent",
+            "Implicit Intent|Explicit Intent|Inbound Intent|Outbound Intent"
+        </item>
+        <item>
+            "Medium",
+            "Which string function can be used to split a string?",
+            1, "split",
+            "split"
+        </item>
+        <item>
+            "Medium",
+            "Which keyword in Java is used to pass a value from one method to another?",
+            1, "return",
+            "return"
+        </item>
+        <item>
+            "Medium",
+            "Name the block used in Java where all exceptions are caught",
+            1, "catch",
+            "catch"
+        </item>
+        <item>
+            "Medium",
+            "Which of the following features are applicable to Java?",
+            2, "Object Oriented|Multithreaded",
+            "Object Oriented|Procedural|Multithreaded|Non-portable"
+        </item>
+        <item>
+            "Medium",
+            "Which of the following principles are applicable to Java?",
+            2, "Inheritance|Polymorphism",
+            "Inheritance|Decapsulation|Polymorphism|Conceptual"
+        </item>
+        <item>
+            "Medium",
+            "Which of these methods are called when the screen changes orientation?",
+            2, "onCreate()|onRestoreInstanceState()",
+            "onCreate()|onRestart()|onActivityResult()|onRestoreInstanceState()"
+        </item>
+
+        <item>
+            "Difficult",
+            "Which of the following methods is associated with Intent?",
+            1, "startActivity",
+            "onCreate|startActivity|onStartCommand|onReceive"
+        </item>
+        <item>
+            "Difficult",
+            "What is correct syntax for main method of a java class?",
+            1, "public static void main(String[] args)",
+            "public static int main(String[] args)|public int main(String[] args)|public static void main(String[] args)|None of the above"
+        </item>
+        <item>
+            "Difficult",
+            "Java keywords can be both in uppercase and lowercase",
+            1, "False",
+            "True|False"
+        </item>
+        <item>
+            "Difficult",
+            "These variables can only be accessed from inside the method they are declared and are destroyed when the method stops executing",
+            1, "Local",
+            "Global|Private|Static|Local"
+        </item>
+        <item>
+            "Difficult",
+            "Choose the right data type for this value - 5.5",
+            1, "double",
+            "double|boolean|int|String"
+        </item>
+        <item>
+            "Difficult",
+            "Choose the right data type for this variable - isEndofQuiz",
+            1, "boolean",
+            "float|boolean|int|String"
+        </item>
+        <item>
+            "Difficult",
+            "Which of the following is a loop control in Java",
+            1, "while",
+            "if..else|while|foreach|switch"
+        </item>
+        <item>
+            "Difficult",
+            "This type of Intent exactly specifies which component to call to perform an action",
+            1, "Explicit Intent",
+            "Explicit Intent|Implicit Intent"
+        </item>
+        <item>
+            "Difficult",
+            "A class cannot be extended when declared",
+            1, "final",
+            "final"
+        </item>
+        <item>
+            "Difficult",
+            "What will be the value of \"y\" after the following statements execute?\nint x = 7;\nint y = x++;",
+            1, "7",
+            "7"
+        </item>
+        <item>
+            "Difficult",
+            "Which of the following are arithmetic operators?",
+            2, "++|--",
+            "AND|++|--|OR"
+        </item>
+        <item>
+            "Difficult",
+            "Two elements are involved in creating an object in Java. They are:",
+            2, "new operator|constructor method",
+            "new operator|subclass|interface|constructor method"
+        </item>
+        <item>
+            "Difficult",
+            "What will be the output of the following piece of code?\nString s1 = new String(\"thomas\");\nString s2 = new String(\"thomson\");\nSystem.out.println(s1 = s2);",
+            1, "thomson",
+            "thomson"
+        </item>
+        <item>
+            "Difficult",
+            "Which keyword in Java refers to the current object?",
+            1, "this",
+            "this"
+        </item>
+        <item>
+            "Difficult",
+            "Which keyword refers to the immediate parent class object?",
+            1, "super",
+            "super"
+        </item>
+        <item>
+            "Difficult",
+            "Pick the keywords that are used in Java exception handling",
+            2, "try|catch",
+            "error|try|exception|catch"
+        </item>
+        <item>
+            "Difficult",
+            "Pick the functions that can be associated with a Java method",
+            2, "Overriding|Overloading",
+            "Overwriting|Overthrowing|Overriding|Overloading"
+        </item>
+        <item>
+            "Difficult",
+            "A class in Java can be",
+            2, "final|abstract",
+            "default|final|native|abstract"
+        </item>
+    </string-array>
 </resources>
