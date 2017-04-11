@@ -45,6 +45,7 @@
     <string name="info_ans">Correct answer >>&#160;&#160; %s</string>
     <string name="info_toast">Check out the incorrect answers</string>
 
+    <!-- Quiz Table Records -->
     <string-array name="records_array">
         <item>
             "Easy",
