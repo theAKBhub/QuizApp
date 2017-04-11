@@ -102,10 +102,10 @@ public class IntroActivity extends AppCompatActivity implements View.OnClickList
 
         DatabaseHandler db = new DatabaseHandler(this);
 
-        // get number of rows in the table
+        // Get number of rows in the table
         rowCount = db.getRowsCount();
 
-        // add rows to table only if the table is empty
+        // Add rows to table only if the table is empty
         if (rowCount == 0) {
 
             db.addRecord(new Quiz(
