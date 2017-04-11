@@ -242,6 +242,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                 isEndOfQuiz = true;
                 processScores();
                 hideQuestionUI();
+                displayToast();
                 displayScore();
                 break;
 
@@ -548,7 +549,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
      */
     public void displayScore() {
         String msgResult = "";
-        String toastMessage = "";
 
         mButtonRestart.setVisibility(View.VISIBLE);
         mButtonEmailScore.setVisibility(View.VISIBLE);
@@ -556,21 +556,28 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         mTextViewResultMsg.setVisibility(View.VISIBLE);
         mTextViewScore.setVisibility(View.VISIBLE);
 
-        toastMessage = getString(R.string.info_scores, mScores);
         mTextViewScore.setText(getString(R.string.info_scores, mScores));
         if (mScores >= PASS_SCORE) {
             mTextViewResultMsg.setText(getString(R.string.info_pass));
             mTextViewResultMsg.setTextColor(ContextCompat.getColor(context, R.color.colorPrimaryDark));
-            toastMessage += "\n" + getString(R.string.info_pass);
         } else {
             mTextViewResultMsg.setText(getString(R.string.info_fail));
             mTextViewResultMsg.setTextColor(ContextCompat.getColor(context, R.color.colorRed));
-            toastMessage += "\n" + getString(R.string.info_fail);
         }
         if (mScores < MAX_QNUM) {
             msgResult = getString(R.string.info_wrong_ans) + mWrongAnswers;
             mTextViewResult.setText(msgResult);
         }
+
+    }
+
+    /**
+     * This method displays a toast with the score at the end of the quiz
+     */
+    public void displayToast() {
+        String toastMessage = "";
+
+        toastMessage = getString(R.string.info_scores, mScores);
         if (mScores < MAX_QNUM) {
             toastMessage += "\n" + getString(R.string.info_toast);
         }
