@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <!-- Dimensions -->
     <dimen name="activity_margin">16dp</dimen>
     <dimen name="dimen_0dp">0dp</dimen>
@@ -21,5 +22,9 @@
     <dimen name="font_medium">15sp</dimen>
     <dimen name="font_large">18sp</dimen>
     <dimen name="font_xlarge">20sp</dimen>
+
+    <!-- Logo size -->
+    <dimen name="logo_width">270dp</dimen>
+    <dimen name="logo_height">271dp</dimen>
 
 </resources>

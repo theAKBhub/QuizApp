@@ -11,6 +11,7 @@
     <string name="label_submit">Submit</string>
     <string name="label_restart">Start New Quiz</string>
     <string name="label_email_score">Email score to me</string>
+    <string name="label_email">Hello %s\n\n</string>
 
     <!-- Spinner values -->
     <string name="level_prompt">Choose complexity level >></string>
@@ -41,9 +42,10 @@
     <string name="info_fail">You haven\'t passed. Better luck next time.</string>
     <string name="info_wrong_ans">Questions(s) you didn\'t answer correctly:</string>
     <string name="info_qs">QS >>&#160;&#160; %s</string>
-    <string name="info_your_ans">Your answer >>&#160;&#160; %s</string>
+    <string name="info_given_ans">Your answer >>&#160;&#160; %s</string>
     <string name="info_ans">Correct answer >>&#160;&#160; %s</string>
     <string name="info_toast">Check out the incorrect answers</string>
+    <string name="info_not_answered">You haven\'t answered this question</string>
 
     <!-- Quiz Table Records -->
     <string-array name="records_array">

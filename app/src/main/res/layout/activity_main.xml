@@ -19,7 +19,6 @@
 
         <LinearLayout
             style="@style/GEN_WrapCont_CentreH"
-            android:layout_marginTop="@dimen/dimen_30dp"
             android:orientation="vertical">
 
             <android.support.design.widget.TextInputLayout

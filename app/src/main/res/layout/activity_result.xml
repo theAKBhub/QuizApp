@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/colorBackground"
+    tools:context="com.example.android.quizapp.QuizActivity">
+
+    <LinearLayout
+        style="@style/GEN_MatchCont_CentreH"
+        android:paddingBottom="@dimen/dimen_30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView_score"
+            style="@style/textViewQNum"/>
+
+        <TextView
+            android:id="@+id/textView_msg_result"
+            style="@style/GEN_TextView"
+            android:textSize="@dimen/font_large"/>
+
+        <TextView
+            android:id="@+id/textView_qs1"
+            style="@style/textQuestion" />
+        <TextView
+            android:id="@+id/textView_ans1"
+            style="@style/textAnswer" />
+        <TextView
+            android:id="@+id/textView_ans_given1"
+            style="@style/textAnswer" />
+        <TextView
+            style="@style/textSpacer" />
+
+        <TextView
+            android:id="@+id/textView_qs2"
+            style="@style/textQuestion" />
+        <TextView
+            android:id="@+id/textView_ans2"
+            style="@style/textAnswer" />
+        <TextView
+            android:id="@+id/textView_ans_given2"
+            style="@style/textAnswer" />
+        <TextView
+            style="@style/textSpacer" />
+
+        <TextView
+            android:id="@+id/textView_qs3"
+            style="@style/textQuestion" />
+        <TextView
+            android:id="@+id/textView_ans3"
+            style="@style/textAnswer" />
+        <TextView
+            android:id="@+id/textView_ans_given3"
+            style="@style/textAnswer" />
+        <TextView
+            style="@style/textSpacer" />
+
+        <TextView
+            android:id="@+id/textView_qs4"
+            style="@style/textQuestion" />
+        <TextView
+            android:id="@+id/textView_ans4"
+            style="@style/textAnswer" />
+        <TextView
+            android:id="@+id/textView_ans_given4"
+            style="@style/textAnswer" />
+        <TextView
+            style="@style/textSpacer" />
+
+        <TextView
+            android:id="@+id/textView_qs5"
+            style="@style/textQuestion" />
+        <TextView
+            android:id="@+id/textView_ans5"
+            style="@style/textAnswer" />
+        <TextView
+            android:id="@+id/textView_ans_given5"
+            style="@style/textAnswer" />
+        <TextView
+            style="@style/textSpacer" />
+
+        <TextView
+            android:id="@+id/textView_qs6"
+            style="@style/textQuestion" />
+        <TextView
+            android:id="@+id/textView_ans6"
+            style="@style/textAnswer" />
+        <TextView
+            android:id="@+id/textView_ans_given6"
+            style="@style/textAnswer" />
+        <TextView
+            style="@style/textSpacer" />
+
+        <TextView
+            android:id="@+id/textView_qs7"
+            style="@style/textQuestion" />
+        <TextView
+            android:id="@+id/textView_ans7"
+            style="@style/textAnswer" />
+        <TextView
+            android:id="@+id/textView_ans_given7"
+            style="@style/textAnswer"
+            android:layout_marginBottom="@dimen/dimen_20dp"/>
+
+        <Button
+            android:id="@+id/button_email_score"
+            android:text="@string/label_email_score"
+            style="@style/btnEmailScores" />
+        <Button
+            android:id="@+id/button_restart"
+            android:text="@string/label_restart"
+            style="@style/btnProcess"
+            android:visibility="visible"/>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -17,27 +17,27 @@
             android:id="@+id/textView_qnum"
             style="@style/textViewQNum"/>
 
-        <TextView
-            android:id="@+id/textView_score"
-            android:visibility="gone"
-            style="@style/textViewQNum"/>
+        <!--<TextView-->
+            <!--android:id="@+id/textView_score"-->
+            <!--android:visibility="gone"-->
+            <!--style="@style/textViewQNum"/>-->
 
         <TextView
             android:id="@+id/textView_question"
             style="@style/GEN_TextView"
             android:textSize="@dimen/font_large"/>
 
-        <TextView
-            android:id="@+id/textView_msg_result"
-            android:visibility="gone"
-            style="@style/GEN_TextView"
-            android:textSize="@dimen/font_large"/>
+        <!--<TextView-->
+            <!--android:id="@+id/textView_msg_result"-->
+            <!--android:visibility="gone"-->
+            <!--style="@style/GEN_TextView"-->
+            <!--android:textSize="@dimen/font_large"/>-->
 
-        <TextView
-            android:id="@+id/textView_result"
-            style="@style/GEN_TextView"
-            android:layout_marginBottom="@dimen/dimen_0dp"
-            android:visibility="gone"/>
+        <!--<TextView-->
+            <!--android:id="@+id/textView_result"-->
+            <!--style="@style/GEN_TextView"-->
+            <!--android:layout_marginBottom="@dimen/dimen_0dp"-->
+            <!--android:visibility="gone"/>-->
 
         <LinearLayout
             style="@style/GEN_MatchWidth_WrapHeight"
@@ -132,14 +132,14 @@
             android:id="@+id/button_submit"
             android:text="@string/label_submit"
             style="@style/btnProcess" />
-        <Button
-            android:id="@+id/button_email_score"
-            android:text="@string/label_email_score"
-            style="@style/btnEmailScores" />
-        <Button
-            android:id="@+id/button_restart"
-            android:text="@string/label_restart"
-            style="@style/btnProcess" />
+        <!--<Button-->
+            <!--android:id="@+id/button_email_score"-->
+            <!--android:text="@string/label_email_score"-->
+            <!--style="@style/btnEmailScores" />-->
+        <!--<Button-->
+            <!--android:id="@+id/button_restart"-->
+            <!--android:text="@string/label_restart"-->
+            <!--style="@style/btnProcess" />-->
 
     </LinearLayout>
 

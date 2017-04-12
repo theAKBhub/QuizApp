@@ -56,10 +56,12 @@
     <!-- -->
 
     <!-- Logo -->
-    <style name="logo" parent="GEN_WrapCont_CentreH">
+    <style name="logo">
+        <item name="android:layout_width">@dimen/logo_width</item>
+        <item name="android:layout_height">@dimen/logo_height</item>
         <item name="android:src">@drawable/quiz</item>
-        <item name="android:layout_marginBottom">@dimen/dimen_50dp</item>
-        <item name="android:scaleType">centerCrop</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_30dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
     </style>
 
     <style name="viewEditText">
@@ -95,11 +97,13 @@
         <item name="android:background">@color/colorPrimaryDark</item>
         <item name="android:textColor">@color/colorGreyLight</item>
         <item name="android:textSize">@dimen/font_medium</item>
+        <item name="android:layout_marginTop">@dimen/dimen_10dp</item>
         <item name="android:visibility">gone</item>
     </style>
 
     <style name="btnEmailScores" parent="btnProcess">
         <item name="android:background">@color/colorGreyDark</item>
+        <item name="android:visibility">visible</item>
     </style>
 
     <style name="textViewHello" parent="GEN_TextView">
@@ -140,6 +144,29 @@
         <item name="android:paddingBottom">@dimen/dimen_15dp</item>
         <item name="android:orientation">vertical</item>
         <item name="android:visibility">gone</item>
+    </style>
+
+    <!-- Style for Results -->
+
+    <style name="textQuestion" parent="GEN_TextView">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="textAnswer" parent="GEN_TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">@dimen/dimen_0dp</item>
+        <item name="android:layout_marginLeft">@dimen/dimen_15dp</item>
+        <item name="android:layout_marginRight">@dimen/dimen_15dp</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_1dp</item>
+    </style>
+
+    <style name="textSpacer" parent="GEN_TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dimen_1dp</item>
+        <item name="android:padding">@dimen/dimen_0dp</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:layout_marginTop">@dimen/dimen_10dp</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_10dp</item>
     </style>
 
 </resources>

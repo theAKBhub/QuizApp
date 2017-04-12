@@ -3,10 +3,9 @@ package com.example.android.quizapp;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +21,6 @@ import android.widget.Toast;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.example.android.quizapp.R.id.button_email_score;
 import static com.example.android.quizapp.R.id.button_prev;
 
 /**
@@ -45,7 +43,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     // Constant variables
     private static final int MIN_QNUM = 1;
     private static final int MAX_QNUM = 7;
-    private static final int PASS_SCORE = 5;
+        //  private static final int PASS_SCORE = 5;
 
     // SavedInstance variables
     private static final String STATE_CURRID = "currId_svd";
@@ -80,14 +78,14 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     // All UI components
     private TextView mTextViewQnum;
     private TextView mTextViewQuestion;
-    private TextView mTextViewResult;
-    private TextView mTextViewScore;
-    private TextView mTextViewResultMsg;
+     /*   private TextView mTextViewResult;
+        private TextView mTextViewScore;
+        private TextView mTextViewResultMsg;*/
     private Button mButtonPrev;
     private Button mButtonNext;
     private Button mButtonSubmit;
-    private Button mButtonRestart;
-    private Button mButtonEmailScore;
+           // private Button mButtonRestart;
+           // private Button mButtonEmailScore;
     private RadioGroup mRadioGroupA;
     private RadioButton mRadioButton1A;
     private RadioButton mRadioButton2A;
@@ -122,14 +120,14 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         // Initialize UI components
         mTextViewQnum = (TextView) findViewById(R.id.textView_qnum);
         mTextViewQuestion = (TextView) findViewById(R.id.textView_question);
-        mTextViewResult = (TextView) findViewById(R.id.textView_result);
+        /*mTextViewResult = (TextView) findViewById(R.id.textView_result);
         mTextViewResultMsg = (TextView) findViewById(R.id.textView_msg_result);
-        mTextViewScore = (TextView) findViewById(R.id.textView_score);
+        mTextViewScore = (TextView) findViewById(R.id.textView_score);*/
         mButtonPrev = (Button) findViewById(button_prev);
         mButtonNext = (Button) findViewById(R.id.button_next);
         mButtonSubmit = (Button) findViewById(R.id.button_submit);
-        mButtonRestart = (Button) findViewById(R.id.button_restart);
-        mButtonEmailScore = (Button) findViewById(button_email_score);
+            // mButtonRestart = (Button) findViewById(R.id.button_restart);
+            //mButtonEmailScore = (Button) findViewById(button_email_score);
         mRadioGroupA = (RadioGroup) findViewById(R.id.radio_group_A);
         mRadioButton1A = (RadioButton) findViewById(R.id.radioButton_option_1A);
         mRadioButton2A = (RadioButton) findViewById(R.id.radioButton_option_2A);
@@ -148,8 +146,8 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         mButtonPrev.setOnClickListener(this);
         mButtonNext.setOnClickListener(this);
         mButtonSubmit.setOnClickListener(this);
-        mButtonRestart.setOnClickListener(this);
-        mButtonEmailScore.setOnClickListener(this);
+            //mButtonRestart.setOnClickListener(this);
+            //mButtonEmailScore.setOnClickListener(this);
 
         if (savedInstanceState == null) {
             getQuizRecords();
@@ -204,7 +202,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             showQuizDetails();
             if (isEndOfQuiz) {
                 hideQuestionUI();
-                displayScore();
+               // displayScore();
             }
         }
     }
@@ -234,22 +232,23 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
 
-            case button_email_score:
-                sendEmail();
+        /*    case button_email_score:
+                sendEmail();*/
 
             case R.id.button_submit:
                 saveAnswers();
                 isEndOfQuiz = true;
                 processScores();
-                hideQuestionUI();
+          //      hideQuestionUI();
                 displayToast();
-                displayScore();
+           //     displayScore();
+                showResult();
                 break;
 
-            case R.id.button_restart:
+           /* case R.id.button_restart:
                 Intent intent = new Intent(context, MainActivity.class);
                 startActivity(intent);
-                break;
+                break;*/
         }
     }
 
@@ -259,9 +258,9 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     public void setCustomTypeface() {
         mTextViewQnum.setTypeface(mCustomFont);
         mTextViewQuestion.setTypeface(mCustomFont);
-        mTextViewResultMsg.setTypeface(mCustomFont);
+      /*  mTextViewResultMsg.setTypeface(mCustomFont);
         mTextViewScore.setTypeface(mCustomFont);
-        mTextViewResult.setTypeface(mCustomFont);
+        mTextViewResult.setTypeface(mCustomFont);*/
     }
 
     /**
@@ -517,16 +516,16 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             if (mArrayAnswerGiven[i] != null) {
                 if (mArrayAnswerGiven[i].equalsIgnoreCase(mArrayAnswer[i])) {
                     mScores++;
-                } else {
+                } /*else {
                     mWrongAnswers += "\n\n" + getString(R.string.info_qs, mArrayQuestion[i]) + "\n";
                     mWrongAnswers += getString(R.string.info_your_ans, mArrayAnswerGiven[i].replace("|", ", ")) + "\n";
                     mWrongAnswers += getString(R.string.info_ans, mArrayAnswer[i].replace("|", ", "));
-                }
-            } else {
+                }*/
+            } /*else {
                 mWrongAnswers += "\n\n" + getString(R.string.info_qs, mArrayQuestion[i]) + "\n";
                 mWrongAnswers += getString(R.string.info_your_ans, "") + "\n";
                 mWrongAnswers += getString(R.string.info_ans, mArrayAnswer[i].replace("|", ", "));
-            }
+            }*/
         }
     }
 
@@ -551,7 +550,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     /**
      * This method displays quiz score
      */
-    public void displayScore() {
+/*    public void displayScore() {
         String msgResult = "";
 
         mButtonRestart.setVisibility(View.VISIBLE);
@@ -573,7 +572,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             mTextViewResult.setText(msgResult);
         }
 
-    }
+    } */
 
     /**
      * This method displays a toast with the score at the end of the quiz
@@ -593,7 +592,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     /**
      * This method emails score to the specified email id
      */
-    public void sendEmail() {
+  /*  public void sendEmail() {
         String msg = "";
 
         msg = getString(R.string.info_scores, mScores) + "\n\n";
@@ -610,5 +609,46 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
+    } */
+
+    /**
+     * This method invokes ResultActivity to display the quiz results
+     */
+    public void showResult() {
+        String questions = "";
+        String answers = "";
+        String answersGiven = "";
+        String score = "0";
+        String intentMessage = "";
+
+        //Prepare string for Intent message
+        questions = TextUtils.join("~", mArrayQuestion);
+        answers = TextUtils.join("~", mArrayAnswer);
+
+        for (int i = 0; i < MAX_QNUM; i++) {
+            if (i > 0) {
+                answersGiven += "~";
+            }
+            if (mArrayAnswerGiven[i] != null) {
+                if (mArrayAnswerGiven[i].equals("")) {
+                    answersGiven += getString(R.string.info_not_answered);
+                } else {
+                    answersGiven += mArrayAnswerGiven[i];
+                }
+            } else {
+                answersGiven += getString(R.string.info_not_answered);
+            }
+
+        }
+
+        score = Integer.toString(mScores);
+        intentMessage = questions + "$" + answers + "$" + answersGiven + "$" + score;
+        intentMessage += "$" + mIntentMessage_array[0];
+        intentMessage += "$" + mIntentMessage_array[1];
+
+        // Invoke Activity
+        Intent intent = new Intent(context, ResultActivity.class);
+        intent.putExtra("message", intentMessage);
+        startActivity(intent);
     }
 }
