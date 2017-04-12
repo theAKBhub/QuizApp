@@ -221,49 +221,49 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
 
         // Display the given answers and set color depending on right or wrong answer
         mTextViewAnsGiven1.setText(getString(R.string.info_given_ans, mArrayAnswerGiven[0].replace("|", ", ")));
-        if (mArrayAnswerGiven[0].equals(mArrayAnswer[0])) {
+        if (mArrayAnswerGiven[0].equalsIgnoreCase(mArrayAnswer[0])) {
             mTextViewAnsGiven1.setTextColor(ContextCompat.getColor(context, R.color.colorPrimaryDark));
         } else {
             mTextViewAnsGiven1.setTextColor(ContextCompat.getColor(context, R.color.colorRed));
         }
 
         mTextViewAnsGiven2.setText(getString(R.string.info_given_ans, mArrayAnswerGiven[1].replace("|", ", ")));
-        if (mArrayAnswerGiven[1].equals(mArrayAnswer[1])) {
+        if (mArrayAnswerGiven[1].equalsIgnoreCase(mArrayAnswer[1])) {
             mTextViewAnsGiven2.setTextColor(ContextCompat.getColor(context, R.color.colorPrimaryDark));
         } else {
             mTextViewAnsGiven2.setTextColor(ContextCompat.getColor(context, R.color.colorRed));
         }
 
         mTextViewAnsGiven3.setText(getString(R.string.info_given_ans, mArrayAnswerGiven[2].replace("|", ", ")));
-        if (mArrayAnswerGiven[2].equals(mArrayAnswer[2])) {
+        if (mArrayAnswerGiven[2].equalsIgnoreCase(mArrayAnswer[2])) {
             mTextViewAnsGiven3.setTextColor(ContextCompat.getColor(context, R.color.colorPrimaryDark));
         } else {
             mTextViewAnsGiven3.setTextColor(ContextCompat.getColor(context, R.color.colorRed));
         }
 
         mTextViewAnsGiven4.setText(getString(R.string.info_given_ans, mArrayAnswerGiven[3].replace("|", ", ")));
-        if (mArrayAnswerGiven[3].equals(mArrayAnswer[3])) {
+        if (mArrayAnswerGiven[3].equalsIgnoreCase(mArrayAnswer[3])) {
             mTextViewAnsGiven4.setTextColor(ContextCompat.getColor(context, R.color.colorPrimaryDark));
         } else {
             mTextViewAnsGiven4.setTextColor(ContextCompat.getColor(context, R.color.colorRed));
         }
 
         mTextViewAnsGiven5.setText(getString(R.string.info_given_ans, mArrayAnswerGiven[4].replace("|", ", ")));
-        if (mArrayAnswerGiven[4].equals(mArrayAnswer[4])) {
+        if (mArrayAnswerGiven[4].equalsIgnoreCase(mArrayAnswer[4])) {
             mTextViewAnsGiven5.setTextColor(ContextCompat.getColor(context, R.color.colorPrimaryDark));
         } else {
             mTextViewAnsGiven5.setTextColor(ContextCompat.getColor(context, R.color.colorRed));
         }
 
         mTextViewAnsGiven6.setText(getString(R.string.info_given_ans, mArrayAnswerGiven[5].replace("|", ", ")));
-        if (mArrayAnswerGiven[5].equals(mArrayAnswer[5])) {
+        if (mArrayAnswerGiven[5].equalsIgnoreCase(mArrayAnswer[5])) {
             mTextViewAnsGiven6.setTextColor(ContextCompat.getColor(context, R.color.colorPrimaryDark));
         } else {
             mTextViewAnsGiven6.setTextColor(ContextCompat.getColor(context, R.color.colorRed));
         }
 
         mTextViewAnsGiven7.setText(getString(R.string.info_given_ans, mArrayAnswerGiven[6].replace("|", ", ")));
-        if (mArrayAnswerGiven[6].equals(mArrayAnswer[6])) {
+        if (mArrayAnswerGiven[6].equalsIgnoreCase(mArrayAnswer[6])) {
             mTextViewAnsGiven7.setTextColor(ContextCompat.getColor(context, R.color.colorPrimaryDark));
         } else {
             mTextViewAnsGiven7.setTextColor(ContextCompat.getColor(context, R.color.colorRed));
