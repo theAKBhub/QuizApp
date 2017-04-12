@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="@drawable/quiz_bg"
+    android:background="@drawable/quiz_bg2"
     tools:context="com.example.android.quizapp.IntroActivity">
 
     <LinearLayout
