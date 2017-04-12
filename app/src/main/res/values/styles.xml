@@ -73,7 +73,6 @@
         <item name="android:maxWidth">@dimen/dimen_320dp</item>
         <item name="android:layout_marginLeft">@dimen/activity_margin</item>
         <item name="android:layout_marginRight">@dimen/activity_margin</item>
-        <item name="android:layout_marginBottom">@dimen/dimen_140dp</item>
     </style>
 
     <style name="viewSpinner" parent="GEN_WrapCont_CentreH">

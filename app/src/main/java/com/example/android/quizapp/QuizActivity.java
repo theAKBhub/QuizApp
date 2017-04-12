@@ -232,7 +232,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                 displayToast();
                 showResult();
                 break;
-
         }
     }
 
@@ -272,6 +271,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * This method shows radio buttons for quiz answer options if number of answers = 1
+     * @param rbNum, qsId, ansOptions
      */
     public void showRadioGroup(int rbNum, int qsId, String [] ansOptions) {
 
@@ -311,6 +311,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * This method shows checkboxes for quiz answer options if number of answers > 1
+     * @param qsId, ansOptions
      */
     public void showCheckBoxes(int qsId, String [] ansOptions) {
         String [] answers = new String[4];
@@ -342,6 +343,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * This method shows EditText for quiz answer if number of answers = 1, and options = 1
+     * @param qsId
      */
     public void showEditText(int qsId) {
         mUIChecker = 0; //this is for EditText
@@ -355,7 +357,8 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * This method displays quiz question and number
-     */
+     * @param qsId
+     * */
     public void displayQuizQs(int qsId) {
         mTextViewQnum.setText(getString(R.string.info_qnum, mCurrentQID));
         mTextViewQuestion.setText(mArrayQuestion[qsId]);
