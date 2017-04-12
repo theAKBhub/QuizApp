@@ -15,7 +15,6 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -191,9 +190,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             mUIChecker = savedInstanceState.getInt(STATE_UICHECKER);
 
             showQuizDetails();
-            if (isEndOfQuiz) {
-                hideQuestionUI();
-            }
         }
     }
 
@@ -228,7 +224,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                 saveAnswers();
                 isEndOfQuiz = true;
                 processScores();
-                hideQuestionUI();
                 displayToast();
                 showResult();
                 break;
@@ -503,24 +498,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         }
-    }
-
-    /**
-     * This method hides all question related UI components
-     */
-    public void hideQuestionUI() {
-        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.rlayout_buttons);
-        relativeLayout.setVisibility(View.GONE);
-
-        mTextViewQnum.setVisibility(View.GONE);
-        mTextViewQuestion.setVisibility(View.GONE);
-        mRadioGroupA.setVisibility(View.GONE);
-        mRadioGroupB.setVisibility(View.GONE);
-        mCheckBoxHolder.setVisibility(View.GONE);
-        mEditTextAnswer.setVisibility(View.GONE);
-        mButtonPrev.setVisibility(View.GONE);
-        mButtonNext.setVisibility(View.GONE);
-        mButtonSubmit.setVisibility(View.GONE);
     }
 
     /**
