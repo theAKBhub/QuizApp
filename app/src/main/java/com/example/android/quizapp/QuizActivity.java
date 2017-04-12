@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -30,12 +31,7 @@ import static com.example.android.quizapp.R.id.button_prev;
  *     (2) User can navigate from one question to another using PREV and NEXT buttons
  *     (3) PREV button is disabled on 1st question, and NEXT button is disabled on 7th question.
  *     (4) SUBMIT button appears on the last question, which when clicked, score is calculated
- *              and displayed along with pass/fail message and questions answered incorrectly.
- *     (5) Two more buttons appear at this stage - EMAIL SCORE and START NEW QUIZ.
- *     (6) When cicked on EMAIL SCORE, it opens up email client to send the score and questions
- *              answered incorrectly to the email-id specified on first Activity.
- *     (7) When clicked on START NEW QUIZ, invokes first Activity (activity_main.xml) to
- *              start a new quiz.
+ *              and ResultActivity is invoked.
  */
 public class QuizActivity extends AppCompatActivity implements View.OnClickListener {
     final Context context = this;
@@ -43,7 +39,8 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     // Constant variables
     private static final int MIN_QNUM = 1;
     private static final int MAX_QNUM = 7;
-        //  private static final int PASS_SCORE = 5;
+    private static final int MAX_PROGRESS = 70;
+    private static final int PROGRESS_INCREMENT = 10;
 
     // SavedInstance variables
     private static final String STATE_CURRID = "currId_svd";
@@ -74,18 +71,14 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     private String [] mArrayOptions = new String[7];
     private String [] mArrayAnswerGiven = new String[7];
     private String mWrongAnswers;
+    private int mProgressBarStatus = 0;
 
     // All UI components
     private TextView mTextViewQnum;
     private TextView mTextViewQuestion;
-     /*   private TextView mTextViewResult;
-        private TextView mTextViewScore;
-        private TextView mTextViewResultMsg;*/
     private Button mButtonPrev;
     private Button mButtonNext;
     private Button mButtonSubmit;
-           // private Button mButtonRestart;
-           // private Button mButtonEmailScore;
     private RadioGroup mRadioGroupA;
     private RadioButton mRadioButton1A;
     private RadioButton mRadioButton2A;
@@ -100,6 +93,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     private CheckBox mCheckBoxOption3;
     private CheckBox mCheckBoxOption4;
     private EditText mEditTextAnswer;
+    private ProgressBar mProgressQuiz;
 
     /**
      * onCreate method of MainActivity
@@ -120,14 +114,9 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         // Initialize UI components
         mTextViewQnum = (TextView) findViewById(R.id.textView_qnum);
         mTextViewQuestion = (TextView) findViewById(R.id.textView_question);
-        /*mTextViewResult = (TextView) findViewById(R.id.textView_result);
-        mTextViewResultMsg = (TextView) findViewById(R.id.textView_msg_result);
-        mTextViewScore = (TextView) findViewById(R.id.textView_score);*/
         mButtonPrev = (Button) findViewById(button_prev);
         mButtonNext = (Button) findViewById(R.id.button_next);
         mButtonSubmit = (Button) findViewById(R.id.button_submit);
-            // mButtonRestart = (Button) findViewById(R.id.button_restart);
-            //mButtonEmailScore = (Button) findViewById(button_email_score);
         mRadioGroupA = (RadioGroup) findViewById(R.id.radio_group_A);
         mRadioButton1A = (RadioButton) findViewById(R.id.radioButton_option_1A);
         mRadioButton2A = (RadioButton) findViewById(R.id.radioButton_option_2A);
@@ -142,12 +131,14 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         mCheckBoxOption3 = (CheckBox) findViewById(R.id.checkBox_option_3);
         mCheckBoxOption4 = (CheckBox) findViewById(R.id.checkBox_option_4);
         mEditTextAnswer = (EditText) findViewById(R.id.editText_answer);
+        mProgressQuiz = (ProgressBar) findViewById(R.id.progress_bar);
+
+        mProgressQuiz.setProgress(PROGRESS_INCREMENT);
+        mProgressQuiz.setMax(MAX_PROGRESS);
 
         mButtonPrev.setOnClickListener(this);
         mButtonNext.setOnClickListener(this);
         mButtonSubmit.setOnClickListener(this);
-            //mButtonRestart.setOnClickListener(this);
-            //mButtonEmailScore.setOnClickListener(this);
 
         if (savedInstanceState == null) {
             getQuizRecords();
@@ -202,7 +193,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             showQuizDetails();
             if (isEndOfQuiz) {
                 hideQuestionUI();
-               // displayScore();
             }
         }
     }
@@ -219,6 +209,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                     saveAnswers();
                     resetViews();
                     mCurrentQID--;
+                    displayProgress();
                     showQuizDetails();
                 }
                 break;
@@ -228,27 +219,20 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                     saveAnswers();
                     resetViews();
                     mCurrentQID++;
+                    displayProgress();
                     showQuizDetails();
                 }
                 break;
-
-        /*    case button_email_score:
-                sendEmail();*/
 
             case R.id.button_submit:
                 saveAnswers();
                 isEndOfQuiz = true;
                 processScores();
-          //      hideQuestionUI();
+                hideQuestionUI();
                 displayToast();
-           //     displayScore();
                 showResult();
                 break;
 
-           /* case R.id.button_restart:
-                Intent intent = new Intent(context, MainActivity.class);
-                startActivity(intent);
-                break;*/
         }
     }
 
@@ -258,9 +242,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     public void setCustomTypeface() {
         mTextViewQnum.setTypeface(mCustomFont);
         mTextViewQuestion.setTypeface(mCustomFont);
-      /*  mTextViewResultMsg.setTypeface(mCustomFont);
-        mTextViewScore.setTypeface(mCustomFont);
-        mTextViewResult.setTypeface(mCustomFont);*/
     }
 
     /**
@@ -363,7 +344,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
      * This method shows EditText for quiz answer if number of answers = 1, and options = 1
      */
     public void showEditText(int qsId) {
-        mUIChecker = 0; //edittext
+        mUIChecker = 0; //this is for EditText
         mEditTextAnswer.setVisibility(View.VISIBLE);
         if(mArrayAnswerGiven.length > qsId && mArrayAnswerGiven[qsId] != null) {
             if (!mArrayAnswerGiven[qsId].equals("")) {
@@ -516,16 +497,8 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             if (mArrayAnswerGiven[i] != null) {
                 if (mArrayAnswerGiven[i].equalsIgnoreCase(mArrayAnswer[i])) {
                     mScores++;
-                } /*else {
-                    mWrongAnswers += "\n\n" + getString(R.string.info_qs, mArrayQuestion[i]) + "\n";
-                    mWrongAnswers += getString(R.string.info_your_ans, mArrayAnswerGiven[i].replace("|", ", ")) + "\n";
-                    mWrongAnswers += getString(R.string.info_ans, mArrayAnswer[i].replace("|", ", "));
-                }*/
-            } /*else {
-                mWrongAnswers += "\n\n" + getString(R.string.info_qs, mArrayQuestion[i]) + "\n";
-                mWrongAnswers += getString(R.string.info_your_ans, "") + "\n";
-                mWrongAnswers += getString(R.string.info_ans, mArrayAnswer[i].replace("|", ", "));
-            }*/
+                }
+            }
         }
     }
 
@@ -548,33 +521,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     /**
-     * This method displays quiz score
-     */
-/*    public void displayScore() {
-        String msgResult = "";
-
-        mButtonRestart.setVisibility(View.VISIBLE);
-        mButtonEmailScore.setVisibility(View.VISIBLE);
-        mTextViewResult.setVisibility(View.VISIBLE);
-        mTextViewResultMsg.setVisibility(View.VISIBLE);
-        mTextViewScore.setVisibility(View.VISIBLE);
-
-        mTextViewScore.setText(getString(R.string.info_scores, mScores));
-        if (mScores >= PASS_SCORE) {
-            mTextViewResultMsg.setText(getString(R.string.info_pass));
-            mTextViewResultMsg.setTextColor(ContextCompat.getColor(context, R.color.colorPrimaryDark));
-        } else {
-            mTextViewResultMsg.setText(getString(R.string.info_fail));
-            mTextViewResultMsg.setTextColor(ContextCompat.getColor(context, R.color.colorRed));
-        }
-        if (mScores < MAX_QNUM) {
-            msgResult = getString(R.string.info_wrong_ans) + mWrongAnswers;
-            mTextViewResult.setText(msgResult);
-        }
-
-    } */
-
-    /**
      * This method displays a toast with the score at the end of the quiz
      */
     public void displayToast() {
@@ -588,28 +534,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
         toast.show();
     }
-
-    /**
-     * This method emails score to the specified email id
-     */
-  /*  public void sendEmail() {
-        String msg = "";
-
-        msg = getString(R.string.info_scores, mScores) + "\n\n";
-        if (mScores < MAX_QNUM) {
-            msg += getString(R.string.info_wrong_ans) + "\n\n";
-            msg += mWrongAnswers;
-        }
-
-        Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
-        intent.putExtra(Intent.EXTRA_EMAIL  , new String[]{mIntentMessage_array[1]});
-        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
-        intent.putExtra(Intent.EXTRA_TEXT, msg);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        }
-    } */
 
     /**
      * This method invokes ResultActivity to display the quiz results
@@ -650,5 +574,13 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(context, ResultActivity.class);
         intent.putExtra("message", intentMessage);
         startActivity(intent);
+    }
+
+    /**
+     * This method shows progress of progress bar depending on Quiz Id
+     */
+    public void displayProgress() {
+        mProgressBarStatus = mCurrentQID * PROGRESS_INCREMENT;
+        mProgressQuiz.setProgress(mProgressBarStatus);
     }
 }

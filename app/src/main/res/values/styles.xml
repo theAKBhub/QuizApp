@@ -32,7 +32,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/font_medium</item>
         <item name="android:textColor">@color/colorGreyDark</item>
-        <item name="android:padding">@dimen/dimen_15dp</item>
+        <item name="android:padding">@dimen/dimen_16dp</item>
         <item name="android:lineSpacingExtra">@dimen/dimen_1dp</item>
     </style>
 
@@ -69,16 +69,17 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/font_medium</item>
         <item name="android:textColor">@color/colorPrimaryDark</item>
-        <item name="android:padding">@dimen/dimen_15dp</item>
+        <item name="android:padding">@dimen/dimen_16dp</item>
         <item name="android:maxWidth">@dimen/dimen_320dp</item>
         <item name="android:layout_marginLeft">@dimen/activity_margin</item>
         <item name="android:layout_marginRight">@dimen/activity_margin</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_140dp</item>
     </style>
 
     <style name="viewSpinner" parent="GEN_WrapCont_CentreH">
         <item name="android:textSize">@dimen/font_medium</item>
         <item name="android:textColor">@color/colorGreyDark</item>
-        <item name="android:padding">@dimen/dimen_15dp</item>
+        <item name="android:padding">@dimen/dimen_16dp</item>
     </style>
 
     <style name="btnGreen" parent="GEN_Button">
@@ -117,7 +118,7 @@
         <item name="android:textSize">@dimen/font_xlarge</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:textColor">@color/colorGreyLight</item>
-        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:background">@color/colorGreyDark</item>
         <item name="android:layout_marginBottom">@dimen/dimen_10dp</item>
         <item name="android:gravity">center</item>
     </style>
@@ -140,8 +141,7 @@
     </style>
 
     <style name="checkBoxHolder" parent="GEN_MatchWidth_WrapHeight">
-        <item name="android:paddingLeft">@dimen/dimen_15dp</item>
-        <item name="android:paddingBottom">@dimen/dimen_15dp</item>
+        <item name="android:paddingLeft">@dimen/dimen_64dp</item>
         <item name="android:orientation">vertical</item>
         <item name="android:visibility">gone</item>
     </style>
@@ -155,8 +155,8 @@
     <style name="textAnswer" parent="GEN_TextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:padding">@dimen/dimen_0dp</item>
-        <item name="android:layout_marginLeft">@dimen/dimen_15dp</item>
-        <item name="android:layout_marginRight">@dimen/dimen_15dp</item>
+        <item name="android:layout_marginLeft">@dimen/dimen_16dp</item>
+        <item name="android:layout_marginRight">@dimen/dimen_16dp</item>
         <item name="android:layout_marginBottom">@dimen/dimen_1dp</item>
     </style>
 
@@ -167,6 +167,12 @@
         <item name="android:background">@color/colorPrimary</item>
         <item name="android:layout_marginTop">@dimen/dimen_10dp</item>
         <item name="android:layout_marginBottom">@dimen/dimen_10dp</item>
+    </style>
+
+    <style name="progressBar" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dimen_20dp</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_20dp</item>
     </style>
 
 </resources>

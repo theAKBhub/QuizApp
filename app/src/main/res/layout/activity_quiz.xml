@@ -3,45 +3,35 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="@color/colorBackground"
+    android:background="@drawable/quiz_bg"
     tools:context="com.example.android.quizapp.QuizActivity">
 
     <LinearLayout
         style="@style/GEN_MatchCont_CentreH"
         android:orientation="vertical">
 
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="@style/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="false" />
+
         <TextView
             android:id="@+id/textView_qnum"
             style="@style/textViewQNum"/>
-
-        <!--<TextView-->
-            <!--android:id="@+id/textView_score"-->
-            <!--android:visibility="gone"-->
-            <!--style="@style/textViewQNum"/>-->
 
         <TextView
             android:id="@+id/textView_question"
             style="@style/GEN_TextView"
             android:textSize="@dimen/font_large"/>
 
-        <!--<TextView-->
-            <!--android:id="@+id/textView_msg_result"-->
-            <!--android:visibility="gone"-->
-            <!--style="@style/GEN_TextView"-->
-            <!--android:textSize="@dimen/font_large"/>-->
-
-        <!--<TextView-->
-            <!--android:id="@+id/textView_result"-->
-            <!--style="@style/GEN_TextView"-->
-            <!--android:layout_marginBottom="@dimen/dimen_0dp"-->
-            <!--android:visibility="gone"/>-->
-
         <LinearLayout
             style="@style/GEN_MatchWidth_WrapHeight"
-            android:padding="@dimen/dimen_15dp"
+            android:paddingLeft="@dimen/dimen_64dp"
             android:orientation="vertical">
 
             <RadioGroup
@@ -67,7 +57,8 @@
 
             <RadioGroup
                 android:id="@+id/radio_group_B"
-                style="@style/radioGroup" >
+                style="@style/radioGroup"
+                android:layout_marginBottom="@dimen/dimen_100dp">
 
                 <RadioButton
                     android:id="@+id/radioButton_option_1B"
@@ -105,13 +96,15 @@
             android:id="@+id/editText_answer"
             android:hint="@string/hint_answer"
             style="@style/viewEditText"
-            android:padding="@dimen/dimen_15dp"
+            android:paddingLeft="@dimen/dimen_64dp"
             android:visibility="gone"/>
 
         <RelativeLayout
             android:id="@+id/rlayout_buttons"
             style="@style/GEN_MatchWidth_WrapHeight"
-            android:paddingTop="@dimen/dimen_15dp"
+            android:paddingTop="@dimen/dimen_16dp"
+            android:paddingLeft="@dimen/dimen_16dp"
+            android:paddingRight="@dimen/dimen_16dp"
             android:paddingBottom="@dimen/dimen_5dp">
 
             <Button
@@ -132,14 +125,6 @@
             android:id="@+id/button_submit"
             android:text="@string/label_submit"
             style="@style/btnProcess" />
-        <!--<Button-->
-            <!--android:id="@+id/button_email_score"-->
-            <!--android:text="@string/label_email_score"-->
-            <!--style="@style/btnEmailScores" />-->
-        <!--<Button-->
-            <!--android:id="@+id/button_restart"-->
-            <!--android:text="@string/label_restart"-->
-            <!--style="@style/btnProcess" />-->
 
     </LinearLayout>
 

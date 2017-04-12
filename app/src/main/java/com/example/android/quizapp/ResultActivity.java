@@ -13,6 +13,14 @@ import android.widget.TextView;
 
 import static com.example.android.quizapp.R.id.button_email_score;
 
+/**
+ * Class - ResultActivity
+ * Functions of this class are as follows:
+ *     (1) Displays score of the quiz
+ *     (2) Displays the quiz questions, right answers and user input answers
+ *     (3) Provides option to EMAIL SCORE
+ *     (4) Provides option to start a new quiz
+ */
 public class ResultActivity extends AppCompatActivity implements View.OnClickListener {
 
     final Context context = this;
@@ -177,6 +185,7 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         String msgResult = "";
 
         mTextViewScore.setText(getString(R.string.info_scores, mFinalScore));
+        mTextViewScore.setBackgroundColor(ContextCompat.getColor(context, R.color.colorPrimaryDark));
 
         if (mFinalScore >= PASS_SCORE) {
             mTextViewResultMsg.setText(getString(R.string.info_pass));
