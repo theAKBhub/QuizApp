@@ -149,8 +149,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             requestFocus(mEditTextName);
             mEditTextName.setError(getString(R.string.error_name_empty));
             return false;
-        }
-        else  {
+        } else  {
             Pattern pattern = Pattern.compile(patternName);
             Matcher matcher = pattern.matcher(mUserName);
             if (!matcher.matches()) {
